@@ -1,2 +1,2 @@
 # fullStackWebAppProject
-Just a test of what is capable in next,js and node.js
+Simple showcase app in next,js and node.js
