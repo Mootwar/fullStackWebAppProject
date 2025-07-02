@@ -14,42 +14,56 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
-  id Int @id @default(autoincrement())
-  title String
-  done Boolean @default(false)
-  createdAt DateTime @default(now())
-}
-
-model Product {
-  id          Int @id @default(autoincrement())
+model Item {
+  id          Int      @id @default(autoincrement())
   title       String
   description String
   price       Float
-  stock       Int @default(0)
+  stock       Int      @default(0)
   imageUrl    String
+  orderItems  OrderItem[]
   createdAt   DateTime @default(now())
 }
 
+model OrderItem {
+  id        Int      @id @default(autoincrement())
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   Int
+  items     Item     @relation(fields: [itemId], references: [id])
+  itemId    Int
+  quantity  Int      @default(1)
+  price     Float
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  userId     Int
+  user       User        @relation(fields: [userId], references: [id])
+  total      Float
+  status     OrderStatus @default(PENDING)
+  orderItems OrderItem[]
+  createdAt  DateTime    @default(now())
+}
+
+enum OrderStatus {
+  PENDING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
 model User {
-  id       Int @id @default(autoincrement())
-  email    String @unique
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
   password String
-  role     Role @default(CUSTOMER)
+  role     Role     @default(CUSTOMER)
   orders   Order[]
 }
+
 
 enum Role {
   ADMIN
   CUSTOMER
 }
 
-model Order {
-  id Int @id @default(autoincrement())
-  userId Int
-  user User @relation(fields: [userId], references: [id])
-  products Product[]
-  total Float
-  status OrderStatus @default(PENDING)
-  createdAt DateTime @default(now())
-}
+
