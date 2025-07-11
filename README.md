@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FullStack Web App Project
 
-## Getting Started
+A simple full-stack showcase app with a React/Next.js frontend and a Node.js/Express + Prisma backend, styled with Tailwind CSS and backed by PostgreSQL.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Client** (frontend)  
+  - Next.js  
+  - React  
+  - Tailwind CSS  
+- **Server** (backend)  
+  - Node.js  
+  - Express.js  
+  - Prisma ORM  
+  - PostgreSQL  
+
+## 🔧 Prerequisites
+
+- [Node.js](https://nodejs.org/) v16+ and npm  
+- [PostgreSQL](https://www.postgresql.org/)  
+- (optional) [pnpm](https://pnpm.io/) or [Yarn](https://yarnpkg.com/)  
+
+## 🛠️ Installation & Setup
+
+1. **Clone this repo**  
+   ```bash
+   git clone https://github.com/Mootwar/fullStackWebAppProject.git
+   cd fullStackWebAppProject
+   ```
+
+2. **Configure the database**
+
+- Start your PostgreSQL server.
+
+- Create a database (e.g. mydb):
 ```
+createdb mydb
+```
+- In server/.env, set your connection string:
+```
+DATABASE_URL="postgresql://<DB_USER>:<DB_PASS>@localhost:5432/mydb"
+```
+3. Start the backend
+```
+cd server
+npm install
+npx prisma migrate dev --name init     # creates tables
+npx prisma generate                    # regenerates client
+npm run dev                            # starts Express on http://localhost:4000
+```
+4. Start the frontend
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+cd ../client
+npm install
+npm run dev                            # starts Next.js on http://localhost:3000
+```
+5. View in your browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Frontend: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- API: http://localhost:4000/api/...
 
-## Learn More
+## 📁 Project Structure
+```
+fullStackWebAppProject/
+├── client/          # Next.js + Tailwind frontend
+│   ├── app/         # pages & layouts
+│   ├── public/      # static assets
+│   └── styles/      # global CSS (Tailwind directives)
+├── server/          # Node.js + Express + Prisma backend
+│   ├── prisma/      # schema.prisma & migrations
+│   ├── src/         # Express routes & controllers
+│   └── .env         # DATABASE_URL for Prisma
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+## 🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork this repository
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Create your feature branch (git checkout -b feature/foo)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Commit your changes (git commit -am 'Add foo')
 
-## Deploy on Vercel
+4. Push to the branch (git push origin feature/foo)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+This project is licensed under the MIT License.
