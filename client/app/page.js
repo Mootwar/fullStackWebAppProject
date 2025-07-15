@@ -1,5 +1,5 @@
 // app/page.js
-
+import Image from 'next/image'
 export const metadata = {
   title: 'Home Page 🏡',
 };
@@ -7,7 +7,8 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="w-full max-w-5xl bg-gray-300 rounded-xl overflow-hidden lg:flex">
+      <div className="w-full max-w-5xl bg-gray-300 rounded-xl border-b-2 border-r-2 overflow-hidden lg:flex">
+
         {/* Left column: your text */}
         <div className="lg:w-1/2 p-8 flex flex-col items-center justify-center text-center">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -16,10 +17,13 @@ export default function Home() {
           <p className="text-lg mb-8">
             Find Your Perfect Fit Today
           </p>
+          <button className="bg-cyan-600 rounded-lg px-4 py-2">Shop Now!!</button>
         </div>
 
         {/* Right column: placeholder for image or additional content */}
-        <div className="lg:w-1/2 h-64 lg:h-auto bg-gray-400"></div>
+        <div className="w-full h-128 bg-[url('/images/hero-section.png')] bg-cover bg-center">
+        </div>
+
       </div>
     </main>
   );
