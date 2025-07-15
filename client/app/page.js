@@ -6,8 +6,16 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="w-full max-w-5xl bg-gray-300 rounded-xl border-b-2 border-r-2 overflow-hidden lg:flex">
+    <main className="
+      min-h-screen
+      bg-[url('/images/hero-bg.png')]
+      bg-cover
+      bg-center
+      bg-no-repeat
+      flex items-center justify-center p-4">
+
+      {/* Hero section */}
+      <div className="w-full max-w-5xl bg-cyan-100 rounded-xl border-b-2 border-r-2 overflow-hidden lg:flex">
 
         {/* Left column: your text */}
         <div className="lg:w-1/2 p-8 flex flex-col items-center justify-center text-center">

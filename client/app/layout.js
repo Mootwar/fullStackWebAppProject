@@ -9,14 +9,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head><meta name="viewport" content="width=device-width, initial-scale=1"/></head>
       <body className="min-h-screen flex flex-col">
-        <header className="text-center"> 🌐 Your App Here </header>
+        <header className="text-center bg-amber-200 border-b-1 border-amber-400"> 🌐 Your Website Here </header>
         <Navbar />
         {children} 
-        <footer className="text-right italic font-bold">© Hector Ramirez 2025</footer>
+        <footer className="border-t-1 border-amber-400 bg-amber-200 text-right italic font-bold">© Hector Ramirez 2025</footer>
       </body>
     </html>
   );
 }
-/**/
