@@ -77,19 +77,3 @@ export default function Navbar() {
         </nav>
   );
 }
-
-
-
-// export default function Navbar() {
-//   return (
-//     <nav className="relative flex items-center justify-center p-4 shadow-md">
-//       <div className="absolute left-4">🗺️ DropDown Menu</div>
-//       <div className="text-xl font-bold">🧢 YourBrandHere</div>
-//       <div className="absolute right-4 flex gap-4">
-//         <button>🔍</button>
-//         <button>🛒</button>
-//         <button>☰</button>
-//       </div>
-//     </nav>
-//   );
-// }
