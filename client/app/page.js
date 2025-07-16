@@ -1,5 +1,4 @@
 // app/page.js
-import Image from 'next/image'
 export const metadata = {
   title: 'Home Page 🏡',
 };
