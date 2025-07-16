@@ -66,12 +66,9 @@ npm run dev                            # starts Next.js on http://localhost:3000
 fullStackWebAppProject/
 ├── client/          # Next.js + Tailwind frontend
 │   ├── app/         # pages & layouts
-│   ├── public/      # static assets
-│   └── styles/      # global CSS (Tailwind directives)
+│   └── public/      # static assets
 ├── server/          # Node.js + Express + Prisma backend
-│   ├── prisma/      # schema.prisma & migrations
-│   ├── src/         # Express routes & controllers
-│   └── .env         # DATABASE_URL for Prisma
+│   └── prisma/      # schema.prisma & migrations
 ├── .gitignore
 ├── LICENSE
 └── README.md
