@@ -13,12 +13,12 @@ export default function Navbar() {
             <div className="relative">
                 <button
                     onClick={() => setOpen(o => !o)}
-                    className="sm:block text-lg hidden hover:text-blue-700 focus:outline-none">
+                    className="lg:block hidden text-lg hover:text-blue-700 focus:outline-none">
                     Products ⬇️
                 </button>
                 {/* Actual Menu that pops up*/}
                 <div
-                    className={`sm:block hidden absolute left-20 mt-2 w-40 bg-white border rounded shadow-lg
+                    className={`lg:block hidden absolute left-20 mt-2 w-40 bg-white border rounded shadow-lg
                         transform origin-top transition duration-150 ease-in-out
                         ${open ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
                     <ul className="flex flex-col text-left">
@@ -85,7 +85,7 @@ export default function Navbar() {
                         <li>
                             <Link
                                 href="/"
-                                className="block px-4 py-2 hover:bg-gray-300 border-b-1"
+                                className="block px-4 py-2 hover:bg-gray-300 text-2xl"
                                 onClick={() => setOpen(false)}>
                                 🏡 Homepage
                             </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
                         <li>
                             <Link
                                 href="/products/t-shirts"
-                                className="block px-4 py-2 hover:bg-gray-300 border-b-1"
+                                className="block px-4 py-2 hover:bg-gray-300 text-2xl"
                                 onClick={() => setOpen(false)}>
                                 👕 T-Shirts
                             </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
                         <li>
                             <Link
                                 href="/products/hoodies"
-                                className="block px-4 py-2 hover:bg-gray-300 border-b-1"
+                                className="block px-4 py-2 hover:bg-gray-300 text-2xl"
                                 onClick={() => setOpen(false)}>
                                 🏀 Hoodies
                             </Link>
@@ -109,7 +109,7 @@ export default function Navbar() {
                         <li>
                             <Link
                                 href="/products/accessories"
-                                className="block px-4 py-2 hover:bg-gray-300"
+                                className="block px-4 py-2 hover:bg-gray-300 text-2xl"
                                 onClick={() => setOpen(false)}>
                                 ⌚ Accessories
                             </Link>
