@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar.js";
+import SubFooter from "./components/SubFooter.js";
 
 export const metadata = {
   title: "Your store",
@@ -12,7 +13,8 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col">
         <header className="text-center bg-amber-200 border-b-1 border-amber-400"> 🌐 Your Website Here </header>
         <Navbar />
-        {children} 
+        <main className="flex-grow">{children}</main>
+        <SubFooter />
         <footer className="border-t-1 border-amber-400 bg-amber-200 text-right italic font-bold">© Hector Ramirez 2025</footer>
       </body>
     </html>
